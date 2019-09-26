@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using SystemClients.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SystemClients.Infrastructure.Data;
 
 namespace SystemClients.Web
 {
@@ -39,6 +40,10 @@ namespace SystemClients.Web
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddDbContext<ClientContext>(options =>
+                 options.UseSqlServer(
+                     Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
