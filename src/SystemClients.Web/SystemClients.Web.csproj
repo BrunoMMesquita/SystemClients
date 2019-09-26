@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-SystemClients.Web-3AF512FC-C1F1-4C06-86B3-537D9306F8A0</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SystemClients.ApplicationCore\SystemClients.ApplicationCore.csproj" />
+    <ProjectReference Include="..\SystemClients.Infrastructure\SystemClients.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
