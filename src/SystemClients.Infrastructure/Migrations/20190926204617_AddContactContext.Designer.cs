@@ -2,14 +2,16 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using SystemClients.Infrastructure.Data;
 
 namespace SystemClients.Infrastructure.Migrations
 {
     [DbContext(typeof(ClientContext))]
-    partial class ClientContextModelSnapshot : ModelSnapshot
+    [Migration("20190926204617_AddContactContext")]
+    partial class AddContactContext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,13 +25,9 @@ namespace SystemClients.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Cpf")
-                        .IsRequired()
-                        .HasColumnType("varchar(11)");
+                    b.Property<string>("Cpf");
 
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("varchar(11)");
+                    b.Property<string>("Nome");
 
                     b.HasKey("ClientId");
 
@@ -44,16 +42,11 @@ namespace SystemClients.Infrastructure.Migrations
 
                     b.Property<int>("ClientId");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                    b.Property<string>("Email");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("varchar(200)");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Telefone")
-                        .HasColumnType("varchar(15)");
+                    b.Property<string>("Telefone");
 
                     b.HasKey("ContactId");
 

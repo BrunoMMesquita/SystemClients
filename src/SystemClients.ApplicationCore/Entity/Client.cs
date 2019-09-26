@@ -9,6 +9,7 @@ namespace SystemClients.ApplicationCore.Entity
         public int ClientId { get; set; }
         public string Nome { get; set; }
         public string Cpf { get; set; }
+        public ICollection<Contact> Contacts { get; set; } 
         public Client()
         {
 
